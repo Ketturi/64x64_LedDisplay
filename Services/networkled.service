@@ -1,0 +1,11 @@
+ [Unit]
+ Description=LED Boot netinfo
+ After=network.target
+# Conflicts=bootled.service
+
+ [Service]
+ Type=oneshot
+ ExecStart=/bin/sh -c '/home/pi/netled.sh'
+
+ [Install]
+ WantedBy=multi-user.target

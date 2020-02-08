@@ -1,0 +1,11 @@
+  [Unit]
+ Description=User led program
+ After=networkled.service
+ #Conflicts=networkled.service
+
+ [Service]
+ Type=simple
+ ExecStart=/bin/sh -c '/home/pi/userled.sh'
+
+ [Install]
+ WantedBy=multi-user.target

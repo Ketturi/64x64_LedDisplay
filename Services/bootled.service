@@ -1,0 +1,11 @@
+ [Unit]
+ Description=LED Boot logo
+ After=sysroot.mount
+# Conflicts=networkled.service
+
+ [Service]
+ Type=oneshot
+ ExecStart=/home/pi/rpi-rgb-led-matrix-master/utils/led-image-viewer --led-rows=64 --led-cols=64 --led-brightness=100 -l 1 /home/pi/rpi-rgb-led-matrix-master/utils/boot.stream
+
+ [Install]
+ WantedBy=multi-user.target
